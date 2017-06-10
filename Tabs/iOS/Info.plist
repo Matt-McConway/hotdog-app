@@ -7,7 +7,7 @@
 	<key>CFBundleName</key>
 	<string>Tabs</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.mercurious.tabs</string>
+	<string>com.microsoft.tabs</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
@@ -43,8 +43,12 @@
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>NSCameraUsageDescription</key>
-	<string>This app needs access to the camera</string>
+	<string>This app needs access to the camera to take photos.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>This app needs access to the photo library</string>
+	<string>This app needs access to your photo library to save photos</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Use Location Information When in Usage</string>
+	<key>NSLocationWhenInUsageDescription</key>
+	<string>This app needs your location to find you</string>
 </dict>
 </plist>

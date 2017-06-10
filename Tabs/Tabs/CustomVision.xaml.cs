@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Newtonsoft.Json.Linq;
 using System.Linq;
+using Plugin.Geolocator;
 
 namespace Tabs
 {
@@ -43,11 +44,30 @@ namespace Tabs
 				return file.GetStream();
 			});
 
+            await postLocationAsync(); 
 
 			await MakePredictionRequest(file);
 		}
 
-		static byte[] GetImageAsByteArray(MediaFile file)
+        async Task postLocationAsync()
+        {
+
+			var locator = CrossGeolocator.Current;
+			locator.DesiredAccuracy = 50;
+
+			var position = await locator.GetPositionAsync(10000);
+
+            NotHotDogModel model = new NotHotDogModel()
+            {
+                Longitude = (float)position.Longitude,
+                Latitude = (float)position.Latitude
+
+			};
+
+            await AzureManager.AzureManagerInstance.PostHotDogInformation(model);
+        }
+
+        static byte[] GetImageAsByteArray(MediaFile file)
 		{
 			var stream = file.GetStream();
 			BinaryReader binaryReader = new BinaryReader(stream);
@@ -84,19 +104,15 @@ namespace Tabs
 					var Probability = from p in rss["Predictions"] select (string)p["Probability"];
 					var Tag = from p in rss["Predictions"] select (string)p["Tag"];
 
-					////Truncate values to labels in XAML
-					//foreach (var item in Tag)
-					//{
-					//	TagLabel.Text += item + ": \n";
-					//}
+					//Truncate values to labels in XAML
+					foreach (var item in Tag)
+					{
+						TagLabel.Text += item + ": \n";
+					}
 
 					foreach (var item in Probability)
 					{
-                        if (int.Parse(item) > 0.5)
-                            PredictionLabel.Text = "Hotdog";
-                        else
-                            PredictionLabel.Text = "Not Hotdog";
-                        
+						PredictionLabel.Text += item + "\n";
 					}
 
 				}

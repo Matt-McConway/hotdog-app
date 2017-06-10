@@ -2,11 +2,11 @@
 
 namespace Tabs
 {
-	public partial class TabsPage : TabbedPage
-	{
-		public TabsPage()
-		{
-			InitializeComponent();
-		}
-	}
+    public partial class TabsPage : TabbedPage
+    {
+        public TabsPage()
+        {
+            InitializeComponent();
+        }
+    }
 }
