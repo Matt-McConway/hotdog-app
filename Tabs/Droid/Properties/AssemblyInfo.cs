@@ -25,3 +25,7 @@ using Android.App;
 
 //[assembly: AssemblyDelaySign(false)]
 //[assembly: AssemblyKeyFile("")]
+
+//Only lets people install the app if they have a camera
+[assembly: UsesFeature("android.hardware.camera", Required = true)]
+[assembly: UsesFeature("android.hardware.camera.autofocus", Required = true)]
