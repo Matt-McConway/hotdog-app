@@ -1,6 +1,8 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
-using Xamarin.Forms.Xaml;
+
+
+using Xamarin.Forms.Xaml; // Added so assembly line at the bottom works 
 
 // Information about this assembly is defined by the following attributes. 
 // Change them to the values specific to your project.
@@ -26,5 +28,5 @@ using Xamarin.Forms.Xaml;
 //[assembly: AssemblyDelaySign(false)]
 //[assembly: AssemblyKeyFile("")]
 
-
-[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
+ 
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)] //Added so that compilation is optimized? 
