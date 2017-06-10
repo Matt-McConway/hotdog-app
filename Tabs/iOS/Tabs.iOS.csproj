@@ -101,6 +101,18 @@
     <Reference Include="Plugin.Media">
       <HintPath>..\packages\Xam.Plugin.Media.2.6.2\lib\Xamarin.iOS10\Plugin.Media.dll</HintPath>
     </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="Microsoft.Cognitive.CustomVision.Training">
+      <HintPath>..\packages\Microsoft.Cognitive.CustomVision.Training.1.0.0\lib\dotnet\Microsoft.Cognitive.CustomVision.Training.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Rest.ClientRuntime">
+      <HintPath>..\packages\Microsoft.Rest.ClientRuntime.2.3.7\lib\netstandard1.4\Microsoft.Rest.ClientRuntime.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Tabs\Tabs.csproj">
